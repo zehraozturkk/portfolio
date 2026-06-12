@@ -1,15 +1,32 @@
-## Getting Started
+# Zehra Öztürk — Portfolio
 
-First, run the development server:
+Personal portfolio built with Next.js, featuring an AI assistant that answers questions about me.
+
+**🔗 Live:** https://portfolyo-silk-beta.vercel.app
+
+## Screenshots
+
+| Home | AI Chat |
+| --- | --- |
+| ![Home](docs/screenshots/home.png) | ![AI Chat](docs/screenshots/chat.png) |
+
+## Features
+
+- Bilingual — English & Turkish (`/en`, `/tr`)
+- AI chat widget that answers questions about my experience and projects (Groq + Vercel AI SDK)
+- Experience, projects, skills and contact sections
+- Responsive design with smooth reveal animations
+
+## Tech Stack
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · Vercel AI SDK · Groq
+
+## Running Locally
 
 ```bash
+npm install
+cp .env.example .env.local   # add your GROQ_API_KEY (optional, only needed for the chat widget)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
