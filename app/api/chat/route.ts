@@ -20,6 +20,29 @@ function isRateLimited(ip: string): boolean {
   return entry.count > RATE_LIMIT;
 }
 
+// --- Dil tespiti: son kullanıcı mesajının diline göre modele net talimat verilir.
+// System prompt Türkçe olduğu için model İngilizce sorulara da Türkçe cevap
+// vermeye meyilli; bu ek talimat onu deterministik olarak düzeltir.
+const TURKISH_CHARS = /[ğüşıöçĞÜŞİÖÇ]/;
+const TURKISH_WORDS =
+  /\b(ve|bir|bu|ne|mi|mu|hangi|kim|kimdir|nedir|merhaba|selam|var|yok|neler|peki|evet|hayır)\b/i;
+
+function lastUserText(messages: UIMessage[]): string {
+  const lastUser = [...messages].reverse().find((m) => m.role === "user");
+  if (!lastUser) return "";
+  return lastUser.parts
+    .map((part) => (part.type === "text" ? part.text : ""))
+    .join(" ");
+}
+
+function languageInstruction(messages: UIMessage[]): string {
+  const text = lastUserText(messages);
+  const isTurkish = TURKISH_CHARS.test(text) || TURKISH_WORDS.test(text);
+  return isTurkish
+    ? "\n\nÖNEMLİ: Kullanıcının son mesajı Türkçe. Cevabını SADECE Türkçe yaz."
+    : "\n\nIMPORTANT: The user's last message is in English. Write your answer ONLY in English.";
+}
+
 export async function POST(req: Request) {
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
   if (isRateLimited(ip)) {
@@ -35,7 +58,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: groq("llama-3.3-70b-versatile"),
-    system: systemPrompt,
+    system: systemPrompt + languageInstruction(recentMessages),
     messages: await convertToModelMessages(recentMessages),
     maxOutputTokens: 512,
     temperature: 0.3,

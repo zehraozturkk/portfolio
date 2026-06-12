@@ -8,7 +8,7 @@ Personal portfolio built with Next.js, featuring an AI assistant that answers qu
 
 | Home | AI Chat |
 | --- | --- |
-| ![Home](docs/screenshots/home.png) | ![AI Chat](docs/screenshots/chat.png) |
+| ![home page](image.png) | ![AI Chat](docs/screenshots/chat.png) |
 
 ## Features
 
