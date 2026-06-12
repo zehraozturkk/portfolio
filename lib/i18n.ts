@@ -12,8 +12,6 @@ const en = {
     projects: "Projects",
     skills: "Skills",
     contact: "Contact",
-    cv: "Resume",
-    cvHref: "/cv-en.pdf",
     toggleToLight: "Switch to light theme",
     toggleToDark: "Switch to dark theme",
   },
@@ -23,8 +21,6 @@ const en = {
     tagline:
       "I build intelligent solutions that create real value — with Python, LLMs, and RAG architectures.",
     viewProjects: "View Projects",
-    downloadCv: "Download Resume",
-    cvHref: "/cv-en.pdf",
     highlightsLabel: "Quick Highlights",
     highlights: [
       "Solutions focused on LLMs, RAG architectures, and GenAI",
@@ -108,8 +104,6 @@ const tr: Dictionary = {
     projects: "Projeler",
     skills: "Yetenekler",
     contact: "İletişim",
-    cv: "CV",
-    cvHref: "/cv-tr.pdf",
     toggleToLight: "Açık temaya geç",
     toggleToDark: "Koyu temaya geç",
   },
@@ -119,8 +113,6 @@ const tr: Dictionary = {
     tagline:
       "Python, LLM'ler ve RAG mimarileriyle üretime değer katan akıllı çözümler geliştiriyorum.",
     viewProjects: "Projeleri Gör",
-    downloadCv: "CV İndir",
-    cvHref: "/cv-tr.pdf",
     highlightsLabel: "Öne Çıkanlar",
     highlights: [
       "LLM, RAG mimarileri ve GenAI odaklı çözümler",

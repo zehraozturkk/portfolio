@@ -72,13 +72,6 @@ export function Navbar({
               {link.label}
             </a>
           ))}
-          <a
-            href={dict.cvHref}
-            download
-            className="rounded-full px-3 py-1.5 text-xs font-bold tracking-widest text-primary uppercase ring-1 ring-primary/40 transition-colors hover:bg-primary hover:text-primary-foreground sm:px-4 sm:text-sm"
-          >
-            {dict.cv}
-          </a>
         </nav>
         <div className="absolute right-0 hidden items-center gap-2 md:flex">
           <a

@@ -29,16 +29,6 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
           >
             {dict.viewProjects}
           </a>
-          <a
-            href={dict.cvHref}
-            download
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "h-12 rounded-xl px-7 text-base font-semibold"
-            )}
-          >
-            {dict.downloadCv}
-          </a>
         </div>
       </div>
 
