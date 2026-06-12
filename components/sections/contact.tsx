@@ -1,5 +1,6 @@
 import { ArrowUpRight, Briefcase, Mail, MapPin } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
+import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const EMAIL = "fatmatuzzehraozturkk@gmail.com";
@@ -24,42 +25,41 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-const links = [
-  {
-    label: "E-posta",
-    value: EMAIL,
-    href: `mailto:${EMAIL}`,
-    icon: Mail,
-  },
-  {
-    label: "GitHub",
-    value: "@zehraozturkk",
-    href: GITHUB,
-    icon: GitHubIcon,
-  },
-  {
-    label: "LinkedIn",
-    value: "Fatmatüzzehra Öztürk",
-    href: LINKEDIN,
-    icon: LinkedInIcon,
-  },
-];
+export function Contact({ dict }: { dict: Dictionary["contact"] }) {
+  const links = [
+    {
+      label: dict.emailLabel,
+      value: EMAIL,
+      href: `mailto:${EMAIL}`,
+      icon: Mail,
+    },
+    {
+      label: "GitHub",
+      value: "@zehraozturkk",
+      href: GITHUB,
+      icon: GitHubIcon,
+    },
+    {
+      label: "LinkedIn",
+      value: "Fatmatüzzehra Öztürk",
+      href: LINKEDIN,
+      icon: LinkedInIcon,
+    },
+  ];
 
-export function Contact() {
   return (
     <section id="contact" className="py-24">
       <div className="text-center">
         <p className="text-xs font-bold tracking-[0.25em] text-primary uppercase">
-          İletişim
+          {dict.eyebrow}
         </p>
         <h2 className="mt-3 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
-          <span className="text-primary">İletişime</span>{" "}
-          <span className="text-primary/50">Geç</span>
+          <span className="text-primary">{dict.headingA}</span>{" "}
+          <span className="text-primary/50">{dict.headingB}</span>
         </h2>
         <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-primary" />
         <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-          Junior AI/ML pozisyonları, iş birlikleri veya sorularınız için
-          bana ulaşabilirsiniz.
+          {dict.subtitle}
         </p>
       </div>
 
@@ -67,22 +67,17 @@ export function Contact() {
         <div className="flex flex-col justify-between rounded-3xl bg-primary p-8 text-primary-foreground shadow-xl shadow-foreground/10">
           <div>
             <h3 className="font-heading text-2xl font-extrabold sm:text-3xl">
-              Yeni fırsatlara açığım
+              {dict.cardTitle}
             </h3>
-            <p className="mt-4 text-primary-foreground/85">
-              Junior AI/ML Engineer ve Machine Learning Engineer pozisyonları
-              arıyorum. Ekibinize katkı sağlayabileceğimi düşünüyorsanız —
-              ya da kariyerime dair bir tavsiyeniz varsa — mesajınıza
-              mutlaka dönüş yaparım.
-            </p>
+            <p className="mt-4 text-primary-foreground/85">{dict.cardText}</p>
             <ul className="mt-6 space-y-3 text-sm text-primary-foreground/85">
               <li className="flex items-center gap-3">
                 <MapPin className="size-4 shrink-0" />
-                İstanbul — ofis veya hibrit
+                {dict.location}
               </li>
               <li className="flex items-center gap-3">
                 <Briefcase className="size-4 shrink-0" />
-                Remote ve relocation&apos;a açık
+                {dict.workStyle}
               </li>
             </ul>
           </div>
@@ -94,7 +89,7 @@ export function Contact() {
             )}
           >
             <Mail className="size-4" />
-            E-posta Gönder
+            {dict.sendEmail}
           </a>
         </div>
 

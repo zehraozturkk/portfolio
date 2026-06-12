@@ -1,5 +1,6 @@
 import { Code2, ExternalLink, Star, Terminal } from "lucide-react";
 import { getHackerRankStats, getLeetCodeStats } from "@/lib/platform-stats";
+import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const LEETCODE_USER = "fzehrao";
@@ -73,7 +74,11 @@ function PlatformCard({
   );
 }
 
-export async function Platforms() {
+export async function Platforms({
+  dict,
+}: {
+  dict: Dictionary["platforms"];
+}) {
   const [leetcode, hackerrank] = await Promise.all([
     getLeetCodeStats(LEETCODE_USER),
     getHackerRankStats(HACKERRANK_USER),
@@ -85,16 +90,15 @@ export async function Platforms() {
     <section id="platforms" className="py-24">
       <div className="text-center">
         <p className="text-xs font-bold tracking-[0.25em] text-primary uppercase">
-          Pratik &amp; Yarışma
+          {dict.eyebrow}
         </p>
         <h2 className="mt-3 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
-          <span className="text-primary">Problem</span>{" "}
-          <span className="text-primary/50">Çözme</span>
+          <span className="text-primary">{dict.headingA}</span>{" "}
+          <span className="text-primary/50">{dict.headingB}</span>
         </h2>
         <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-primary" />
         <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-          Algoritma pratiğimi sürdürdüğüm platformlar — istatistikler günlük
-          olarak otomatik güncellenir.
+          {dict.subtitle}
         </p>
       </div>
 
@@ -108,9 +112,9 @@ export async function Platforms() {
           stats={
             leetcode
               ? [
-                  { label: "Çözülen", value: String(leetcode.solvedTotal) },
-                  { label: "Easy", value: String(leetcode.solvedEasy) },
-                  { label: "Medium", value: String(leetcode.solvedMedium) },
+                  { label: dict.solved, value: String(leetcode.solvedTotal) },
+                  { label: dict.easy, value: String(leetcode.solvedEasy) },
+                  { label: dict.medium, value: String(leetcode.solvedMedium) },
                 ]
               : []
           }
@@ -124,12 +128,12 @@ export async function Platforms() {
           stats={
             hackerrank
               ? [
-                  { label: "Çözülen", value: String(hackerrank.solvedTotal) },
+                  { label: dict.solved, value: String(hackerrank.solvedTotal) },
                   {
-                    label: "Python",
+                    label: dict.python,
                     value: pythonBadge ? `${pythonBadge.stars}★` : "—",
                   },
-                  { label: "Rozet", value: String(hackerrank.badges.length) },
+                  { label: dict.badges, value: String(hackerrank.badges.length) },
                 ]
               : []
           }
@@ -138,7 +142,7 @@ export async function Platforms() {
 
       <p className="mt-8 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
         <Star className="size-3.5" aria-hidden />
-        Veriler platformların açık API&apos;lerinden günde bir kez çekilir.
+        {dict.footnote}
       </p>
     </section>
   );

@@ -1,21 +1,15 @@
 import {
-  Activity,
   BarChart3,
-  Blocks,
-  Bot,
   Boxes,
   Braces,
   Brain,
   Cloud,
   Code2,
   Container,
-  Cpu,
   Database,
   FileCode,
   FlaskConical,
-  Gauge,
   GitBranch,
-  Globe,
   HardDrive,
   Layers,
   LineChart,
@@ -26,17 +20,17 @@ import {
   Sparkles,
   Table2,
   Terminal,
-  TrendingUp,
   Workflow,
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import type { Locale } from "@/lib/i18n";
 
 export type Skill = { name: string; icon: LucideIcon };
 
 export type SkillCategory = {
   id: string;
-  label: string;
+  label: Record<Locale, string>;
   icon: LucideIcon;
   skills: Skill[];
 };
@@ -44,7 +38,7 @@ export type SkillCategory = {
 export const skillCategories: SkillCategory[] = [
   {
     id: "languages",
-    label: "Diller",
+    label: { en: "Languages", tr: "Diller" },
     icon: Code2,
     skills: [
       { name: "Python", icon: FileCode },
@@ -54,7 +48,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "genai",
-    label: "GenAI & LLM",
+    label: { en: "GenAI & LLM", tr: "GenAI & LLM" },
     icon: Sparkles,
     skills: [
       { name: "RAG", icon: Search },
@@ -66,7 +60,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "data-science",
-    label: "Veri Bilimi & ML",
+    label: { en: "Data Science & ML", tr: "Veri Bilimi & ML" },
     icon: LineChart,
     skills: [
       { name: "Pandas", icon: Table2 },
@@ -77,7 +71,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "backend",
-    label: "Backend & Veritabanı",
+    label: { en: "Backend & Databases", tr: "Backend & Veritabanı" },
     icon: Server,
     skills: [
       { name: "FastAPI", icon: Zap },
@@ -91,7 +85,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "cloud-devops",
-    label: "Cloud & DevOps",
+    label: { en: "Cloud & DevOps", tr: "Cloud & DevOps" },
     icon: Cloud,
     skills: [
       { name: "Docker", icon: Container },

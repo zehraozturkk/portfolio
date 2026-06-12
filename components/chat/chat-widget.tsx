@@ -4,10 +4,11 @@ import { useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import type { Dictionary } from "@/lib/i18n";
 import { ChatMessages } from "./chat-messages";
 import { SuggestedQuestions } from "./suggested-questions";
 
-export function ChatWidget() {
+export function ChatWidget({ dict }: { dict: Dictionary["chat"] }) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const { messages, sendMessage, status } = useChat();
@@ -27,7 +28,7 @@ export function ChatWidget() {
       <Button
         onClick={() => setOpen((o) => !o)}
         className="fixed bottom-6 right-6 z-50 h-14 w-14 rounded-full shadow-lg"
-        aria-label={open ? "Asistanı kapat" : "Asistanı aç"}
+        aria-label={open ? dict.closeLabel : dict.openLabel}
       >
         {open ? "✕" : "💬"}
       </Button>
@@ -35,15 +36,20 @@ export function ChatWidget() {
       {open && (
         <div className="fixed bottom-24 right-6 z-50 flex h-[28rem] w-[22rem] flex-col overflow-hidden rounded-xl border bg-background shadow-2xl">
           <div className="border-b px-4 py-3">
-            <p className="text-sm font-semibold">AI Asistan</p>
-            <p className="text-xs text-muted-foreground">
-              Fatmatüzzehra hakkında soru sorun
-            </p>
+            <p className="text-sm font-semibold">{dict.title}</p>
+            <p className="text-xs text-muted-foreground">{dict.subtitle}</p>
           </div>
 
-          <ChatMessages messages={messages} isLoading={isLoading} />
+          <ChatMessages
+            messages={messages}
+            isLoading={isLoading}
+            greeting={dict.greeting}
+            typing={dict.typing}
+          />
 
-          {messages.length === 0 && <SuggestedQuestions onSelect={send} />}
+          {messages.length === 0 && (
+            <SuggestedQuestions questions={dict.questions} onSelect={send} />
+          )}
 
           <form
             onSubmit={(e) => {
@@ -55,11 +61,11 @@ export function ChatWidget() {
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Sorunuzu yazın…"
+              placeholder={dict.placeholder}
               disabled={isLoading}
             />
             <Button type="submit" disabled={isLoading || !input.trim()}>
-              Gönder
+              {dict.send}
             </Button>
           </form>
         </div>

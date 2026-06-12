@@ -2,18 +2,27 @@
 
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import type { Dictionary, Locale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-const links = [
-  { href: "#hero", label: "Anasayfa" },
-  { href: "#projects", label: "Projeler" },
-  { href: "#skills", label: "Yetenekler" },
-  { href: "#contact", label: "İletişim" },
-];
+const sections = ["#hero", "#projects", "#skills", "#contact"];
 
-export function Navbar() {
+export function Navbar({
+  lang,
+  dict,
+}: {
+  lang: Locale;
+  dict: Dictionary["nav"];
+}) {
   const [active, setActive] = useState("#hero");
   const [dark, setDark] = useState(false);
+
+  const links = [
+    { href: "#hero", label: dict.home },
+    { href: "#projects", label: dict.projects },
+    { href: "#skills", label: dict.skills },
+    { href: "#contact", label: dict.contact },
+  ];
 
   useEffect(() => {
     setDark(document.documentElement.classList.contains("dark"));
@@ -29,8 +38,8 @@ export function Navbar() {
       { rootMargin: "-40% 0px -55% 0px" }
     );
 
-    for (const link of links) {
-      const el = document.querySelector(link.href);
+    for (const href of sections) {
+      const el = document.querySelector(href);
       if (el) observer.observe(el);
     }
     return () => observer.disconnect();
@@ -42,6 +51,8 @@ export function Navbar() {
     document.documentElement.classList.toggle("dark", next);
     localStorage.setItem("theme", next ? "dark" : "light");
   }
+
+  const otherLang: Locale = lang === "tr" ? "en" : "tr";
 
   return (
     <header className="fixed inset-x-0 top-4 z-50 px-4 sm:top-6">
@@ -62,21 +73,29 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="/cv.pdf"
+            href={dict.cvHref}
             download
             className="rounded-full px-3 py-1.5 text-xs font-bold tracking-widest text-primary uppercase ring-1 ring-primary/40 transition-colors hover:bg-primary hover:text-primary-foreground sm:px-4 sm:text-sm"
           >
-            CV
+            {dict.cv}
           </a>
         </nav>
-        <button
-          type="button"
-          onClick={toggleTheme}
-          aria-label={dark ? "Açık temaya geç" : "Koyu temaya geç"}
-          className="absolute right-0 hidden size-10 items-center justify-center rounded-xl bg-card/80 text-foreground shadow-lg shadow-foreground/5 ring-1 ring-foreground/10 backdrop-blur-md transition-colors hover:bg-secondary md:flex"
-        >
-          {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
-        </button>
+        <div className="absolute right-0 hidden items-center gap-2 md:flex">
+          <a
+            href={`/${otherLang}`}
+            className="flex h-10 items-center justify-center rounded-xl bg-card/80 px-3 text-xs font-bold tracking-widest text-muted-foreground uppercase shadow-lg shadow-foreground/5 ring-1 ring-foreground/10 backdrop-blur-md transition-colors hover:bg-secondary hover:text-foreground"
+          >
+            {otherLang}
+          </a>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={dark ? dict.toggleToLight : dict.toggleToDark}
+            className="flex size-10 items-center justify-center rounded-xl bg-card/80 text-foreground shadow-lg shadow-foreground/5 ring-1 ring-foreground/10 backdrop-blur-md transition-colors hover:bg-secondary"
+          >
+            {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+          </button>
+        </div>
       </div>
     </header>
   );

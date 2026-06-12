@@ -1,20 +1,8 @@
 import { buttonVariants } from "@/components/ui/button";
+import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
-const highlights = [
-  "LLM, RAG mimarileri ve GenAI odaklı çözümler",
-  "4 farklı şirkette uçtan uca AI/ML deneyimi",
-  "Junior AI/ML pozisyonlarına ve iş birliklerine açık",
-];
-
-const stats = [
-  { value: "4+", label: "İş Deneyimi" },
-  { value: "1.", label: "TÜBİTAK Ödülü" },
-  { value: "100M+", label: "Kayıtla RAG" },
-  { value: "GenAI", label: "Uzmanlık" },
-];
-
-export function Hero() {
+export function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
     <section
       id="hero"
@@ -22,15 +10,14 @@ export function Hero() {
     >
       <div>
         <p className="text-sm font-bold tracking-[0.25em] text-primary uppercase">
-          AI &amp; Machine Learning
+          {dict.eyebrow}
         </p>
         <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-primary sm:text-6xl xl:text-7xl">
           Fatmatüzzehra Öztürk
-          <span className="mt-2 block">ML &amp; GenAI Engineer</span>
+          <span className="mt-2 block">{dict.role}</span>
         </h1>
         <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-          Python, LLM&apos;ler ve RAG mimarileriyle üretime değer katan akıllı
-          çözümler geliştiriyorum.
+          {dict.tagline}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -40,17 +27,17 @@ export function Hero() {
               "h-12 rounded-xl px-7 text-base font-semibold"
             )}
           >
-            Projeleri Gör
+            {dict.viewProjects}
           </a>
           <a
-            href="/cv.pdf"
+            href={dict.cvHref}
             download
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "h-12 rounded-xl px-7 text-base font-semibold"
             )}
           >
-            CV İndir
+            {dict.downloadCv}
           </a>
         </div>
       </div>
@@ -61,10 +48,10 @@ export function Hero() {
         </div>
 
         <p className="mt-8 text-xs font-bold tracking-[0.2em] text-muted-foreground uppercase">
-          Öne Çıkanlar
+          {dict.highlightsLabel}
         </p>
         <ul className="mt-3 space-y-2.5">
-          {highlights.map((highlight) => (
+          {dict.highlights.map((highlight) => (
             <li key={highlight} className="flex gap-3 text-[15px]">
               <span
                 aria-hidden
@@ -77,7 +64,7 @@ export function Hero() {
 
         <div className="mt-6 border-t pt-6">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {stats.map((stat) => (
+            {dict.stats.map((stat) => (
               <div
                 key={stat.label}
                 className="rounded-2xl bg-secondary/60 px-1 py-4 text-center ring-1 ring-foreground/5"

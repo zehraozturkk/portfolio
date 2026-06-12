@@ -1,20 +1,15 @@
 "use client";
 
-const QUESTIONS = [
-  "LLM ve RAG tecrübesi var mı?",
-  "En iyi projesi hangisi?",
-  "Hangi çalışma modeline açık?",
-  "Üretim ortamı tecrübesi var mı?",
-];
-
 export function SuggestedQuestions({
+  questions,
   onSelect,
 }: {
+  questions: readonly string[];
   onSelect: (question: string) => void;
 }) {
   return (
     <div className="flex flex-wrap gap-2 px-4 pb-2">
-      {QUESTIONS.map((q) => (
+      {questions.map((q) => (
         <button
           key={q}
           onClick={() => onSelect(q)}

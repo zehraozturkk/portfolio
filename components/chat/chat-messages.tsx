@@ -12,9 +12,13 @@ function messageText(message: UIMessage): string {
 export function ChatMessages({
   messages,
   isLoading,
+  greeting,
+  typing,
 }: {
   messages: UIMessage[];
   isLoading: boolean;
+  greeting: string;
+  typing: string;
 }) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
@@ -25,9 +29,7 @@ export function ChatMessages({
   return (
     <div className="flex-1 space-y-3 overflow-y-auto p-4">
       {messages.length === 0 && (
-        <p className="text-sm text-muted-foreground">
-          Merhaba! Fatmatüzzehra hakkında merak ettiklerinizi sorabilirsiniz.
-        </p>
+        <p className="text-sm text-muted-foreground">{greeting}</p>
       )}
       {messages.map((m) => (
         <div
@@ -43,7 +45,7 @@ export function ChatMessages({
       ))}
       {isLoading && (
         <div className="mr-8 rounded-lg bg-muted px-3 py-2 text-sm text-muted-foreground">
-          Yazıyor…
+          {typing}
         </div>
       )}
       <div ref={bottomRef} />

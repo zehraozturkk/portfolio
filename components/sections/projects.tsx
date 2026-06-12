@@ -1,7 +1,8 @@
 import { ExternalLink } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, lang }: { project: Project; lang: Locale }) {
   const Icon = project.icon;
   const Wrapper = project.github ? "a" : "div";
 
@@ -24,7 +25,7 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
       <h3 className="mt-5 font-heading text-lg font-bold">{project.title}</h3>
       <p className="mt-2 grow text-sm leading-relaxed text-muted-foreground">
-        {project.description}
+        {project.description[lang]}
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
@@ -40,27 +41,32 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
-export function Projects() {
+export function Projects({
+  lang,
+  dict,
+}: {
+  lang: Locale;
+  dict: Dictionary["projects"];
+}) {
   return (
     <section id="projects" className="py-24">
       <div className="text-center">
         <p className="text-xs font-bold tracking-[0.25em] text-primary uppercase">
-          Seçilmiş İşler
+          {dict.eyebrow}
         </p>
         <h2 className="mt-3 font-heading text-4xl font-extrabold tracking-tight sm:text-5xl">
-          <span className="text-primary">Öne Çıkan</span>{" "}
-          <span className="text-primary/50">Projeler</span>
+          <span className="text-primary">{dict.headingA}</span>{" "}
+          <span className="text-primary/50">{dict.headingB}</span>
         </h2>
         <div className="mx-auto mt-4 h-1 w-12 rounded-full bg-primary" />
         <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-          Gerçek problemlere dokunan AI, veri ve full-stack projelerinden bir
-          seçki.
+          {dict.subtitle}
         </p>
       </div>
 
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+          <ProjectCard key={project.title} project={project} lang={lang} />
         ))}
       </div>
 
@@ -71,7 +77,7 @@ export function Projects() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-bold tracking-widest text-primary uppercase underline-offset-8 hover:underline"
         >
-          Tüm Projeler GitHub&apos;da
+          {dict.allOnGithub}
           <ExternalLink className="size-3.5" />
         </a>
       </div>
