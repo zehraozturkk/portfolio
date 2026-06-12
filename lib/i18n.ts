@@ -34,7 +34,6 @@ const en = {
     stats: [
       { value: "4+", label: "Work Experiences" },
       { value: "1st", label: "TÜBİTAK Award" },
-      { value: "100M+", label: "Records in RAG" },
       { value: "GenAI", label: "Specialization" },
     ],
   },
@@ -131,7 +130,6 @@ const tr: Dictionary = {
     stats: [
       { value: "4+", label: "İş Deneyimi" },
       { value: "1.", label: "TÜBİTAK Ödülü" },
-      { value: "100M+", label: "Kayıtla RAG" },
       { value: "GenAI", label: "Uzmanlık" },
     ],
   },
