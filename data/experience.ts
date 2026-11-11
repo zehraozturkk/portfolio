@@ -7,7 +7,7 @@ export type Experience = {
   org: string;
   location: Record<Locale, string>;
   period: Record<Locale, string>;
-  highlights: Record<Locale, string[]>; // 2-3 kısa madde
+  highlights: Record<Locale, string[]>; // 2-4 kısa madde
   subjects: string[];
   icon: LucideIcon;
 };
@@ -18,20 +18,22 @@ export const experiences: Experience[] = [
     role: { tr: "AI Developer", en: "AI Developer" },
     org: "ProudSec",
     location: { tr: "Ankara", en: "Ankara, Türkiye" },
-    period: { tr: "Mart – Mayıs 2026", en: "Mar – May 2026" },
+    period: { tr: "Mart – Kasım 2026", en: "Mar – Nov 2026" },
     highlights: {
       tr: [
-        "FastAPI, LangGraph ve LangChain ile karmaşık güvenlik sorularını doğal dilde yorumlayan bir GenAI güvenlik asistanı geliştirdim.",
-        "Asistanın ilgili güvenlik veritabanlarını otonom olarak seçip sorgulamasını sağlayan akıllı tool-routing mantığı tasarladım; manuel inceleme süresi önemli ölçüde azaldı.",
-        "RAG mimarisi ve token optimizasyonuyla otomatik yanıt süresini düşürdüm.",
+        "FastAPI, LangGraph ve LangChain ile şirketin güvenlik ürünlerine entegre bir GenAI asistanı geliştirdim; sorguları ilgili güvenlik veritabanlarına otonom yönlendiren, tool calling kullanan bir AI agent tasarladım ve token kullanımını azalttım.",
+        "vLLM ile on-premise, self-hosted bir LLM devreye aldım; harici API bağımlılığını kaldırıp hassas verinin şirket içinde kalmasını sağladım.",
+        "Günde 1.000+ haberi işleyip özetleyen ve tehdit aktörlerini tespit eden production LLM pipeline'ı kurdum; CVE analizi ve otomatik raporlama için bir AI workflow geliştirdim.",
+        "Özel bir spaCy NER modeli eğiterek günlük etiketleme precision'ını %87'den %98'e çıkardım.",
       ],
       en: [
-        "Built a GenAI security assistant with FastAPI, LangGraph, and LangChain that interprets complex security questions in natural language.",
-        "Designed intelligent tool-routing logic that lets the assistant autonomously pick and query the right security databases, cutting manual review time significantly.",
-        "Reduced automated response times through RAG architecture and token optimization.",
+        "Built a GenAI assistant integrated into the company's security products with FastAPI, LangGraph, and LangChain; designed a tool-calling AI agent that autonomously routes queries to the relevant security databases while reducing token usage.",
+        "Deployed a self-hosted LLM on-premise with vLLM, removing external API dependency and keeping sensitive data in-house.",
+        "Built a production LLM pipeline that ingests and summarizes 1,000+ news articles daily and detects threat actors; developed an AI workflow for CVE analysis and automated reporting.",
+        "Trained a custom spaCy NER model that raised daily labeling precision from 87% to 98%.",
       ],
     },
-    subjects: ["LangGraph", "LangChain", "FastAPI", "RAG"],
+    subjects: ["AI Agents", "LangGraph", "FastAPI", "vLLM", "spaCy NER"],
     icon: Briefcase,
   },
   {
@@ -44,12 +46,12 @@ export const experiences: Experience[] = [
       tr: [
         "16.000+ satırlık ham sağlık verisine EDA ve NLP tabanlı feature engineering uyguladım; otomatik scriptlerle veri temizleme süresini %50 azalttım.",
         "LightGBM tedavi süresi tahmin modelinde Optuna ve FLAML optimizasyonuyla R² skorunu 0.86'dan 0.91'e yükselttim.",
-        "SHAP analiziyle model açıklanabilirliğini güçlendirdim ve Power BI'da karar destek dashboard'ları oluşturdum.",
+        "SHAP analiziyle model açıklanabilirliğini güçlendirdim ve Power BI'da 2 karar destek dashboard'u oluşturdum.",
       ],
       en: [
         "Applied EDA and NLP-based feature engineering to 16,000+ rows of raw healthcare data; automated scripts cut data cleaning time by 50%.",
         "Raised the R² score of a LightGBM treatment-duration model from 0.86 to 0.91 with Optuna and FLAML hyperparameter optimization.",
-        "Strengthened model explainability with SHAP analysis and built decision-support dashboards in Power BI.",
+        "Strengthened model explainability with SHAP analysis and built 2 decision-support dashboards in Power BI.",
       ],
     },
     subjects: ["LightGBM", "Optuna", "SHAP", "Power BI"],
@@ -65,12 +67,12 @@ export const experiences: Experience[] = [
       tr: [
         "PostgreSQL üzerinde 100 milyondan fazla kayıt yöneten bir RAG sistemi tasarladım; FAISS indekslemeyle saniyenin altında arama süreleri elde ettim.",
         "Elasticsearch ile entegre bir chatbot ve web trafiği loglarını analiz eden Streamlit tabanlı bir arayüz geliştirdim.",
-        "Özel etiketlenmiş veri setleriyle Türkçe NER modeli oluşturdum; Jenkins ve Bitbucket ile CI/CD otomasyonu kurdum.",
+        "Özel etiketlenmiş veri setiyle 3 varlık tipini kapsayan Türkçe NER modeli eğittim; Pull Request'leri otomatik inceleyen TypeScript aracı geliştirdim ve Jenkins, Bitbucket ile CI/CD otomasyonu kurdum.",
       ],
       en: [
         "Designed a RAG system managing 100M+ records on PostgreSQL, achieving sub-second search with FAISS indexing.",
         "Developed an Elasticsearch-integrated chatbot and a Streamlit interface for analyzing web traffic logs.",
-        "Built a Turkish NER model with custom-labeled datasets; set up CI/CD automation with Jenkins and Bitbucket.",
+        "Trained a Turkish NER model covering 3 entity types on a custom-labeled dataset; built a TypeScript tool that automatically reviews pull requests and set up CI/CD with Jenkins and Bitbucket.",
       ],
     },
     subjects: ["RAG", "FAISS", "Elasticsearch", "Türkçe NER"],

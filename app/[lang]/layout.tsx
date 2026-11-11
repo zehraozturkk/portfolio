@@ -32,14 +32,14 @@ export async function generateMetadata({
   const { lang } = await params;
   return lang === "tr"
     ? {
-        title: "Fatmatüzzehra Öztürk | ML & GenAI Engineer",
+        title: "Fatmatüzzehra Yıldız | AI Application Engineer",
         description:
-          "Python, LLM'ler ve RAG mimarileriyle üretime değer katan akıllı çözümler geliştiren Machine Learning Engineer.",
+          "LLM, RAG ve AI agent'larla production AI uygulamaları geliştiren AI Application Engineer.",
       }
     : {
-        title: "Fatmatüzzehra Öztürk | ML & GenAI Engineer",
+        title: "Fatmatüzzehra Yıldız | AI Application Engineer",
         description:
-          "Machine Learning Engineer building intelligent solutions with Python, LLMs, and RAG architectures.",
+          "AI Application Engineer building production AI applications with LLMs, RAG, and AI agents.",
       };
 }
 

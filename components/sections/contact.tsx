@@ -4,8 +4,7 @@ import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 const EMAIL = "fatmatuzzehraozturkk@gmail.com";
-// TODO: LinkedIn kullanıcı adını doğrula
-const LINKEDIN = "https://www.linkedin.com/in/fatmatuzzehra-ozturk";
+const LINKEDIN = "https://www.linkedin.com/in/fatmatuzzehrayildiz";
 const GITHUB = "https://github.com/zehraozturkk";
 
 // lucide'ın bu sürümünde marka ikonları yok; GitHub/LinkedIn inline SVG.
@@ -41,7 +40,7 @@ export function Contact({ dict }: { dict: Dictionary["contact"] }) {
     },
     {
       label: "LinkedIn",
-      value: "Fatmatüzzehra Öztürk",
+      value: "Fatmatüzzehra Yıldız",
       href: LINKEDIN,
       icon: LinkedInIcon,
     },

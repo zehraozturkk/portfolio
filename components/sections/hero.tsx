@@ -1,6 +1,17 @@
+import fs from "fs";
+import path from "path";
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import type { Dictionary } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
+
+// Profil fotoğrafı: public/profile.jpg (veya .jpeg/.png/.webp; uzantı büyük harf de olabilir).
+// Dosya yoksa baş harfler gösterilir. Gerçek dosya adı okunur ki büyük/küçük harfe
+// duyarlı sunucularda (Vercel) da yol doğru olsun.
+const PUBLIC_DIR = path.join(process.cwd(), "public");
+const PROFILE_PHOTO = (fs.existsSync(PUBLIC_DIR) ? fs.readdirSync(PUBLIC_DIR) : []).find(
+  (file) => /^profile\.(jpe?g|png|webp)$/i.test(file)
+);
 
 export function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
@@ -13,8 +24,10 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
           {dict.eyebrow}
         </p>
         <h1 className="mt-4 font-heading text-5xl font-extrabold tracking-tight text-primary sm:text-6xl xl:text-7xl">
-          Fatmatüzzehra Öztürk
-          <span className="mt-2 block">{dict.role}</span>
+          Fatmatüzzehra Yıldız
+          <span className="mt-4 block font-sans text-2xl font-medium tracking-normal text-foreground/70 sm:text-3xl">
+            {dict.role}
+          </span>
         </h1>
         <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
           {dict.tagline}
@@ -33,9 +46,20 @@ export function Hero({ dict }: { dict: Dictionary["hero"] }) {
       </div>
 
       <div className="rounded-3xl bg-card p-6 shadow-xl shadow-foreground/5 ring-1 ring-foreground/10 sm:p-8">
-        <div className="mx-auto flex size-36 items-center justify-center rounded-full bg-gradient-to-br from-primary/70 to-primary font-heading text-4xl font-extrabold text-primary-foreground ring-4 ring-primary/30 ring-offset-4 ring-offset-card sm:size-44">
-          FÖ
-        </div>
+        {PROFILE_PHOTO ? (
+          <Image
+            src={`/${PROFILE_PHOTO}`}
+            alt="Fatmatüzzehra Yıldız"
+            width={352}
+            height={352}
+            priority
+            className="mx-auto size-36 rounded-full object-cover ring-4 ring-primary/30 ring-offset-4 ring-offset-card sm:size-44"
+          />
+        ) : (
+          <div className="mx-auto flex size-36 items-center justify-center rounded-full bg-gradient-to-br from-primary/70 to-primary font-heading text-4xl font-extrabold text-primary-foreground ring-4 ring-primary/30 ring-offset-4 ring-offset-card sm:size-44">
+            FY
+          </div>
+        )}
 
         <p className="mt-8 text-xs font-bold tracking-[0.2em] text-muted-foreground uppercase">
           {dict.highlightsLabel}

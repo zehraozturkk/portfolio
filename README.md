@@ -1,4 +1,4 @@
-# Zehra Öztürk — Portfolio
+# Fatmatüzzehra Yıldız — Portfolio
 
 Personal portfolio built with Next.js, featuring an AI assistant that answers questions about me.
 

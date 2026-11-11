@@ -4,25 +4,33 @@
 
 ## Kimim
 
-Ben Fatmatüzzehra Öztürk, İstanbul'da yaşayan bir Machine Learning Engineer'ım. Muğla Sıtkı Koçman Üniversitesi Bilgisayar Mühendisliği bölümünden (%100 İngilizce) 2025 yılında mezun oldum. Veri bilimi, makine öğrenimi ve derin öğrenme alanlarında deneyimim var; özellikle Büyük Dil Modelleri (LLM), RAG mimarileri ve GenAI odaklı çözümler geliştirmeye odaklanıyorum. TÜBİTAK 2209/A kapsamında yürüttüğüm AccessMate projesi, 160'tan fazla başvuru arasından Genç Beyinler Yeni Fikirler Yarışması'nda Toplum Kategorisi Birincilik Ödülü'nü kazandı. Clean Code ve Design Pattern prensipleriyle ölçeklenebilir, okunabilir yazılım geliştirmeye özen gösteririm. Agile/Scrum süreçlerinde deneyimliyim ve yeni teknolojilere hızla adapte olurum.
+Ben Fatmatüzzehra Yıldız, Kocaeli'de yaşayan bir AI Application Engineer'ım; LLM, RAG ve AI agent'lar üzerine çalışıyorum. 4 farklı şirkette 2 yılı aşkın uygulamalı deneyimle production ortamında çalışan AI uygulamaları geliştirip devreye alıyorum. ProudSec'te FastAPI, LangGraph ve LangChain ile GenAI servisleri ve AI agent'lar geliştirdim; tool calling, RAG ve vLLM ile on-premise LLM deployment konularında çalıştım. Embedding ve vektör veritabanlarıyla (FAISS, Pinecone) semantik arama, REST API geliştirme, PostgreSQL üzerinde SQL ve veri modelleme ile CI/CD konularında deneyimliyim. Siber güvenlik alanında, veri gizliliği odaklı bir geçmişim var. TÜBİTAK 2209/A kapsamında liderlik ettiğim AccessMate projesi, 160'tan fazla proje arasından Genç Beyinler Yeni Fikirler Yarışması'nda Toplum Kategorisi Birincilik Ödülü'nü kazandı. Kocaeli Üniversitesi Bilgisayar Mühendisliği'nde tezli yüksek lisans öğrencisiyim.
 
 ## Eğitim
 
-Muğla Sıtkı Koçman Üniversitesi, Bilgisayar Mühendisliği Lisans (B.Sc.), 2020–2025. Eğitim dili %100 İngilizceydi ve 3.02/4.00 GPA ile mezun oldum. Üniversite döneminde TÜBİTAK 2209/A destekli bir araştırma projesi yürüttüm ve Muğla Teknopark'ın Teknogirişim Eğitim ve Mentorluk Programı'nı tamamladım; projem ilk 6'ya seçilerek Teknopark'ta ofis kullanım hakkı kazandı.
+- **Yüksek Lisans (M.Sc., tezli):** Kocaeli Üniversitesi, Bilgisayar Mühendisliği, Eylül 2026 – devam ediyor.
+- **Lisans (B.Sc.):** Muğla Sıtkı Koçman Üniversitesi, Bilgisayar Mühendisliği, 2020–2025. Eğitim dili %100 İngilizceydi ve 3.02/4.00 GPA ile mezun oldum. Üniversite döneminde TÜBİTAK 2209/A destekli bir araştırma projesi yürüttüm ve Muğla Teknopark'ın Teknogirişim Eğitim ve Mentorluk Programı'nı tamamladım; projem ilk 6'ya seçilerek Teknopark'ta ofis kullanım hakkı kazandı.
 
 ## İş Deneyimi
 
-### Part-time AI Developer — ProudSec (Ankara, Mart 2026 – Mayıs 2026)
+### Part-time AI Developer — ProudSec (Ankara, Mart 2026 – Kasım 2026)
 
-ProudSec'te siber güvenlik alanında GenAI tabanlı bir güvenlik asistanı geliştirdim. FastAPI, LangGraph ve LangChain kullanarak karmaşık güvenlik sorularını doğal dilde yorumlayan, doğru araçlara yönlendiren ve çok kaynaklı veriyi aksiyon alınabilir istihbarata dönüştüren bir sistem kurdum. LangGraph ve RAG mimarisiyle otomatik yanıt süresini düşürdüm ve token optimizasyonu yaptım. Asistanın ilgili güvenlik veritabanlarını otonom olarak seçip sorgulamasını sağlayan akıllı tool-routing mantığı tasarladım; bu sayede manuel inceleme süresi önemli ölçüde azaldı.
+ProudSec'te siber güvenlik alanında GenAI servisleri ve AI agent'lar geliştirdim. Bu iş Kasım 2026'da sona erdi.
+
+- FastAPI, LangGraph ve LangChain ile şirketin güvenlik ürünlerine entegre bir GenAI asistanı geliştirdim; sorguları ilgili güvenlik veritabanlarına otonom olarak yönlendiren, tool calling kullanan ve çok kaynaklı veriyi aksiyon alınabilir bulgulara dönüştüren bir AI agent tasarladım, token kullanımını azalttım.
+- AI yeteneklerini FastAPI REST API'leri ve mevcut ürünlerle entegre backend servisleri üzerinden sundum.
+- vLLM ile on-premise, self-hosted bir LLM devreye aldım (model entegrasyonu ve deployment); böylece harici API bağımlılığı kalktı ve hassas veri şirket içinde kaldı.
+- Günde 1.000'den fazla haberi işleyip özetleyen ve tehdit aktörlerini tespit eden production LLM pipeline'ı kurdum.
+- Özel bir spaCy NER modeli eğiterek günlük etiketleme precision'ını %87'den %98'e çıkardım; hatalı etiketlenen kayıtlar ortadan kalktı.
+- Doğru CVE analizi ve otomatik raporlama için bir AI workflow geliştirdim.
 
 ### Data Scientist Intern — Pusula Kurumsal İş Çözümleri (İstanbul, Ekim 2025 – Aralık 2025)
 
-16.000+ satırlık ham sağlık verisi üzerinde keşifsel veri analizi (EDA) ve NLP tabanlı feature engineering uygulayarak veriyi modellemeye hazır hale getirdim; otomatikleştirilmiş scriptlerle veri temizleme süresini %50 azalttım. LightGBM ile tedavi süresi tahmin modeli geliştirdim ve Optuna ile FLAML kullanarak yaptığım hiperparametre optimizasyonuyla R² skorunu 0.86'dan 0.91'e yükselttim. SHAP analiziyle modelin açıklanabilirliğini güçlendirdim ve Power BI üzerinde karar destek dashboard'ları oluşturdum. Scrum/Agile ortamında çalıştım, sprint takibini Jira üzerinden yürüttüm.
+16.000+ satırlık ham sağlık verisi üzerinde keşifsel veri analizi (EDA) ve NLP tabanlı feature engineering uygulayarak veriyi modellemeye hazır hale getirdim; otomatikleştirilmiş scriptlerle veri temizleme süresini %50 azalttım. LightGBM ile tedavi süresi tahmin modeli geliştirdim ve Optuna ile FLAML kullanarak yaptığım hiperparametre optimizasyonuyla R² skorunu 0.86'dan 0.91'e yükselttim. SHAP analiziyle modelin açıklanabilirliğini güçlendirdim ve Power BI üzerinde 2 karar destek dashboard'u oluşturdum. Scrum/Agile ortamında çalıştım, sprint takibini Jira üzerinden yürüttüm.
 
 ### AI Engineer Intern — Secure Computing (Ankara, Eylül 2024 – Ağustos 2025)
 
-Bir yıl boyunca uçtan uca AI mühendisliği deneyimi kazandım. PostgreSQL üzerinde 100 milyondan fazla kayıt yöneten bir RAG sistemi tasarladım ve FAISS indeksleme ile saniyenin altında arama süreleri elde ettim. Gerçek zamanlı alışveriş verileriyle eğitilen bir makine öğrenmesi modeli geliştirerek anlık ürün içgörüleri sağladım. Elasticsearch ile entegre bir chatbot uygulaması ve web trafiği loglarını analiz eden Streamlit tabanlı bir arayüz geliştirdim. Özel etiketlenmiş veri setleriyle Türkçe Named Entity Recognition (NER) modeli oluşturdum. Ayrıca Jenkins ve Bitbucket ile CI/CD otomasyonu kurdum ve Pull Request'leri kıdemli geliştirici yaklaşımıyla inceleyen TypeScript tabanlı bir araç geliştirdim.
+Bir yıl boyunca uçtan uca AI mühendisliği deneyimi kazandım. PostgreSQL üzerinde 100 milyondan fazla kayıt üzerinde çalışan bir RAG sistemi tasarladım; embedding'ler ve FAISS vektör indeksleme ile saniyenin altında semantik arama süreleri elde ettim. Gerçek zamanlı alışveriş verileriyle eğitilen bir makine öğrenmesi modeli geliştirerek anlık ürün içgörüleri sağladım. Elasticsearch ile entegre bir chatbot uygulaması ve web trafiği loglarını analiz eden Streamlit tabanlı bir arayüz geliştirdim. Özel etiketlenmiş bir veri setiyle 3 varlık tipini kapsayan Türkçe Named Entity Recognition (NER) modeli eğittim. Ayrıca Jenkins, Bitbucket ve Git ile CI/CD otomasyonu kurdum ve Pull Request'leri otomatik olarak inceleyen TypeScript tabanlı bir araç geliştirdim.
 
 ### Data Scientist Intern — Kibar Holding / Assan Bilişim (İstanbul, Temmuz 2024 – Ağustos 2024)
 
@@ -33,7 +41,7 @@ Bir yıl boyunca uçtan uca AI mühendisliği deneyimi kazandım. PostgreSQL üz
 ### AccessMate — Mekan Erişilebilirliği Mobil Değerlendirme Sistemi (TÜBİTAK 2209/A, Birincilik Ödülü)
 
 - **Sorun:** Engelli bireyler bir mekana gitmeden önce oranın kendileri için erişilebilir olup olmadığını bilemiyor; bu bilgiye ulaşmanın standart ve güvenilir bir yolu yok.
-- **Çözüm:** Kamusal alanları 15'ten fazla erişilebilirlik kriterine göre değerlendiren bir mobil uygulama geliştirdik. Geliştirme ekibine liderlik ettim; ilk altı ayda 300'den fazla lokasyon kapsama alındı. Node.js ve MySQL ile yüksek erişilebilirlikli backend altyapısını tasarlayıp devreye aldım.
+- **Çözüm:** Kamusal alanları 15'ten fazla erişilebilirlik kriterine göre değerlendiren bir mobil uygulama geliştirdik. Geliştirme ekibine liderlik ettim; ilk altı ayda 300'den fazla lokasyon kapsama alındı. MySQL veri modelini tasarladım ve erişilebilirlik verisini gerçek zamanlı işleyen Node.js backend'ini devreye aldım.
 - **Teknolojiler:** Node.js, MySQL, mobil uygulama geliştirme, REST API.
 - **En zorlandığım kısım:**  Hem teknik geliştirmeyi hem de ekip liderliğini aynı anda yürütmek
 - **Ne öğrendim:**  Proje yönetimi, ekip koordinasyonu ve gerçek kullanıcılarla (engelli bireyler) ürün doğrulama. TÜBİTAK süreciyle akademik raporlama ve bütçe yönetimi deneyimi kazandım.
@@ -56,40 +64,43 @@ Bir yıl boyunca uçtan uca AI mühendisliği deneyimi kazandım. PostgreSQL üz
 
 ## Sertifikalar ve Programlar
 
-Türk Telekom Big Data Camp'te Scala-Spark ekosistemiyle Big Data işleme ve modelleme eğitimini tamamladım; SMOTE, LightGBM ve XGBoost kullanarak dengesiz veri üzerinde churn prediction projesi geliştirdim. Insider AI Weekend'de CrewAI ile otonom ajanları koordine eden bir multi-agent framework kurdum ve n8n ile operasyonel otomasyon pipeline'ları geliştirdim. Muğla Teknopark Teknogirişim Eğitim ve Mentorluk Programı'nda iş modeli, finans ve fikri mülkiyet konularında uygulamalı girişimcilik eğitimi aldım.
+- **Big Data Camp – Türk Telekom:** Scala ve Spark ile büyük veri işleme; SMOTE, LightGBM ve XGBoost kullanarak dengesiz veri üzerinde churn prediction projesi.
+- **AI Weekend – Insider:** CrewAI ile multi-agent workflow'lar ve n8n ile otomasyon pipeline'ları.
+- **AI in Marketing – Samsung Innovation Campus / UNDP Türkiye.**
+- **Java Programming – Turkcell Geleceği Yazanlar:** Spring Boot ve Docker ile mikroservis mimarileri.
+- **Teknogirişim Programı – Muğla Teknopark:** İş modeli, finans ve fikri mülkiyet konularında girişimcilik eğitimi; projem ilk 6'ya seçilerek ofis kullanım hakkı kazandı.
 
 ## Yeteneklerim
 
-- **Programlama Dilleri:** Python (ana dilim, en güçlü olduğum alan), SQL, JavaScript ve TypeScript (orta seviye, backend araçları ve web projeleri geliştirebilecek düzeyde).
-- **AI / ML & Veri Bilimi:** LLM uygulamaları, RAG mimarileri, LangChain, LangGraph, vLLM, Hugging Face, FAISS, Scikit-learn, Pandas, NLP (Türkçe NER dahil).
-- **Framework'ler:** FastAPI, Node.js, Streamlit.
-- **Veritabanları & Arama:** PostgreSQL, MongoDB, Elasticsearch, Pinecone.
-- **Web Scraping:** BeautifulSoup, Scrapy.
-- **Bulut:** Microsoft Azure (staj deneyimi), AWS (temel düzey).
-- **DevOps & Araçlar:** Docker, Git, Linux, REST API, Jenkins, n8n, Jira.
-- **Analitik & BI:** Power BI.
-- **Multi-agent sistemler:** CrewAI ile deneyim.
+- **Programlama Dilleri:** Python (ana dilim, en güçlü olduğum alan), SQL, Java, TypeScript.
+- **Generative AI:** LLM uygulamaları, RAG, AI agent'lar, tool calling, multi-agent workflow'lar, prompt engineering, LangChain, LangGraph, CrewAI, vLLM, Hugging Face.
+- **Retrieval & Arama:** Semantik arama, embedding'ler, vektör veritabanları (FAISS, Pinecone), Elasticsearch.
+- **ML & NLP:** NLP, NER (Türkçe NER dahil), spaCy, scikit-learn, LightGBM, XGBoost, Optuna, SHAP, Pandas.
+- **Backend & API:** FastAPI, REST API, Spring Boot, mikroservisler, Node.js, Streamlit.
+- **Veritabanları:** PostgreSQL, MySQL, ilişkisel veritabanları, veri modelleme.
+- **DevOps & Araçlar:** Docker, Git, CI/CD (Jenkins, Bitbucket), Linux, Microsoft Azure, Power BI, Jira, n8n.
+- **Yabancı Dil:** İngilizce – profesyonel çalışma yeterliliği (B2); Türkçe – ana dil.
 
 ## Kariyer Hedefim
 
-LLM ve GenAI alanında uzmanlaşmak istiyorum; özellikle RAG sistemleri, agent mimarileri ve üretim ortamında çalışan AI ürünleri geliştirmeye odaklanıyorum. Üretime değer katan, gerçek kullanıcı problemlerini çözen projelerde çalışmak; öğrenmeye açık, bilgi paylaşımının güçlü olduğu bir mühendislik ekibinin parçası olmak istiyorum. Junior/entry-level AI Engineer veya Machine Learning Engineer pozisyonlarına açığım.
+LLM ve GenAI alanında uzmanlaşmak istiyorum; özellikle RAG sistemleri, agent mimarileri ve üretim ortamında çalışan AI ürünleri geliştirmeye odaklanıyorum. Üretime değer katan, gerçek kullanıcı problemlerini çözen projelerde çalışmak; öğrenmeye açık, bilgi paylaşımının güçlü olduğu bir mühendislik ekibinin parçası olmak istiyorum. AI Engineer / AI Application Engineer pozisyonlarına açığım.
 
-Çalışma şekli konusunda esneğim: İstanbul'da ofisten veya hibrit çalışabilirim, tamamen remote pozisyonlara açığım ve doğru fırsat için başka bir şehre taşınmaya (relocation) da sıcak bakıyorum.
+Kocaeli'de yaşıyorum; hibrit ve remote çalışmaya açığım.
 
 ## Sık Sorulabilecek Sorular
 
 - **Takım çalışması tecrüben var mı?** Evet. AccessMate projesinde geliştirme ekibine liderlik ettim. Pusula'da Scrum/Agile ortamında sprint bazlı çalıştım ve Jira kullandım. Secure Computing'de bir yıl boyunca ekip içinde CI/CD süreçleri kurdum ve kod inceleme kültürünün parçası oldum.
 - **Neden bu alanı seçtin?** Üniversitede veri bilimiyle başladım, LLM'lerin yükselişiyle birlikte doğal dil ve GenAI tarafına yöneldim. İnsanların gerçek problemlerini çözen AI ürünleri geliştirmek beni motive ediyor
-- **İngilizce seviyen nedir?** Lisans eğitimimin tamamı İngilizceydi (%100 İngilizce müfredat). Teknik dokümantasyon okuma, yazma ve teknik iletişimde rahatım.
-- **Üretim (production) tecrüben var mı?** Evet. ProudSec'te canlı çalışan bir GenAI güvenlik asistanı geliştirdim. Secure Computing'de 100M+ kayıtlı bir RAG sistemi ve CI/CD pipeline'ları kurdum.
-- **Hangi LLM araçlarıyla çalıştın?** LangChain, LangGraph, vLLM, Hugging Face, FAISS, Pinecone, CrewAI. Hem OpenAI tarzı API tabanlı hem de açık kaynak model deneyimim var.
-- **Hangi çalışma modeline açık? Remote / hibrit / ofis?** Hepsine açığım. İstanbul'da yaşıyorum; ofisten veya hibrit çalışabilirim, tamamen remote pozisyonlar da uygun. Doğru fırsat için şehir değiştirmeye (relocation) de açığım.
+- **İngilizce seviyen nedir?** Profesyonel çalışma yeterliliğinde (B2). Lisans eğitimimin tamamı İngilizceydi (%100 İngilizce müfredat). Teknik dokümantasyon okuma, yazma ve teknik iletişimde rahatım.
+- **Üretim (production) tecrüben var mı?** Evet. ProudSec'te güvenlik ürünlerine entegre bir GenAI asistanı, günde 1.000+ haber işleyen bir LLM pipeline'ı ve vLLM ile on-premise LLM deployment'ı geliştirdim. Secure Computing'de 100M+ kayıtlı bir RAG sistemi ve CI/CD pipeline'ları kurdum.
+- **Hangi LLM araçlarıyla çalıştın?** LangChain, LangGraph, vLLM, Hugging Face, FAISS, Pinecone, CrewAI. Hem API tabanlı hem de vLLM ile self-hosted (on-premise) açık kaynak model deneyimim var.
+- **Hangi çalışma modeline açık? Remote / hibrit / ofis?** Kocaeli'de yaşıyorum; hibrit ve remote çalışmaya açığım.
 - **Maaş beklentin nedir?** Bu konuyu görüşme sürecinde konuşmayı tercih ediyorum. Lütfen e-posta üzerinden iletişime geçin.
 
 ## İletişim
 
 - E-posta: fatmatuzzehraozturkk@gmail.com
 - GitHub: github.com/zehraozturkk
-- LinkedIn: linkedin.com/in/fatmatuzzehraozturk
+- LinkedIn: linkedin.com/in/fatmatuzzehrayildiz
 - Kaggle: kaggle.com/fzehraozturk
-- Konum: İstanbul
+- Konum: Kocaeli, Türkiye

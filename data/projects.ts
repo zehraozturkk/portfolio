@@ -21,8 +21,8 @@ export const projects: Project[] = [
   {
     title: "AccessMate",
     description: {
-      tr: "Mekanları 15+ erişilebilirlik kriterine göre değerlendiren mobil platform. TÜBİTAK 2209/A destekli; 160+ proje arasından Toplum Kategorisi Birincilik Ödülü.",
-      en: "A mobile platform that rates venues against 15+ accessibility criteria. Backed by TÜBİTAK 2209/A; won 1st place in the Community Category among 160+ projects.",
+      tr: "Kamusal alanları 15+ erişilebilirlik kriterine göre değerlendiren mobil platform; ilk altı ayda 300+ lokasyon. TÜBİTAK 2209/A destekli; 160+ proje arasından Toplum Kategorisi Birincilik Ödülü.",
+      en: "A mobile platform that rates public spaces against 15+ accessibility criteria, covering 300+ locations in its first six months. Backed by TÜBİTAK 2209/A; won 1st place in the Community Category among 160+ projects.",
     },
     tags: ["Node.js", "TÜBİTAK #1"],
     icon: Accessibility,
